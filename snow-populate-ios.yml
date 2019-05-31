@@ -25,7 +25,7 @@
         instance: "{{ SN_INSTANCE }}"
         data:
           name: "{{ inventory_hostname }}"
-          host_name: "{{ansible_net_hostname}}"
+          host_name: "{{ inventory_hostname }}"
           manufacturer: "{{ vendor }}"
           firmware_manufacturer: "{{ vendor }}"
           device_type: router
@@ -38,6 +38,7 @@
           ports: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].mediatype }}'
           ram: '{{ ansible_net_memtotal_mb }}'
           short_description: "{{ansible_net_filesystems_info}}"
+          sys_id: "95ec64c5db353300bb392a9a4896197b"
       register: new_host
       delegate_to: localhost
       run_once: true
