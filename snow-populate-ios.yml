@@ -19,7 +19,7 @@
     - name: Create a network host record for {{ inventory_hostname }}
       snow_record:
         state: present
-        # table: cmdb_ci_linux_server
+        table: cmdb_ci_linux_server
         username: "{{ SN_USERNAME }}"
         password: "{{ SN_PASSWORD }}"
         instance: "{{ SN_INSTANCE }}"
@@ -37,7 +37,7 @@
           mac_address: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].macaddress }}'
           ports: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].mediatype }}'
           ram: '{{ ansible_net_memtotal_mb }}'
-        number: "95ec64c5db353300bb392a9a4896197b"
+        # number: "95ec64c5db353300bb392a9a4896197b"
       register: new_host
       delegate_to: localhost
       run_once: true
