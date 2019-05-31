@@ -14,7 +14,7 @@
 - name: Create a network host record for "{{ inventory_hostname }}"
   snow_record:
     state: present
-    table: cmdb_ci_netgear
+    table: cmdb_ci_linux_server
     username: "{{ SN_USERNAME }}"
     password: "{{ SN_PASSWORD }}"
     instance: "{{ SN_INSTANCE }}"
@@ -24,7 +24,7 @@
       firmware_manufacturer: "{{ vendor }}"
       device_type: router
       model_number: "{{ ansible_facts.net_model }}"
-      assigned_to: "Michael Hoefer"
+      assigned_to: "Sean Cavanaugh"
       firmware_version: "{{ ansible_facts.net_version }}"
       serial_number: "{{ ansible_facts.net_serialnum }}"
       ip_address: "{{ ansible_host }}"
