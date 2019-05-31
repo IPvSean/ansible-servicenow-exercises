@@ -37,6 +37,7 @@
           mac_address: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].macaddress }}'
           ports: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].mediatype }}'
           ram: '{{ ansible_net_memtotal_mb }}'
+          sys_id: "95ec64c5db353300bb392a9a4896197b"
       register: new_host
       delegate_to: localhost
       run_once: true
