@@ -19,7 +19,7 @@
     - name: Create a network host record for {{ inventory_hostname }}
       snow_record:
         state: present
-        table: cmdb_ci_linux_server
+        # table: cmdb_ci_linux_server
         username: "{{ SN_USERNAME }}"
         password: "{{ SN_PASSWORD }}"
         instance: "{{ SN_INSTANCE }}"
