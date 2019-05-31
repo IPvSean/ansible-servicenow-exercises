@@ -1,6 +1,6 @@
 ---
 - name: RAISE AN INCIDENT
-  hosts: localhost
+  hosts: rtr1
   connection: local
   gather_facts: no
   tasks:
@@ -36,6 +36,8 @@
           mac_address: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].macaddress }}'
           ports: '{{ ansible_facts.net_interfaces["GigabitEthernet1"].mediatype }}'
       register: new_host
+      delegate_to: localhost
+      run_once: true
 
 # - debug: var=new_host.record
 # - debug: var=ansible_facts
